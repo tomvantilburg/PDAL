@@ -38,18 +38,16 @@
 
 #include <Eigen/Dense>
 
-namespace std {
+
+
+namespace pdal
+{
+    
 template<typename T, typename... Args>
 std::unique_ptr<T> make_unique(Args&&... args)
 {
     return std::unique_ptr<T>(new T(std::forward<Args>(args)...));
 }
-}
-
-namespace pdal
-{
-    
-
 
 class PDAL_DLL TeaserFilter : public Filter
 {
